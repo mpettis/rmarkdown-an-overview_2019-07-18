@@ -1,0 +1,100 @@
+---
+title: "Inspect-DataFinal"
+author: "Matt Pettis"
+date: "June 21, 2019"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    code_folding: hide
+editor_options: 
+  chunk_output_type: console
+---
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(width = 154)
+
+library(tidyverse)
+library(here)
+```
+
+# Load Data
+
+I will usually put `load_*()` functions in a `lib-load.R` file and source that
+file in all of my Rmd files so I have a single point of truth about how to load
+and pre-process a file.  Here, for brevity, I'll define the load function and
+use it.
+
+```{r}
+# This has no error handling at this point, but it does define the column types so that
+# read_csv() doesn't have to guess at types.
+# I will also eventually include any preprocessing that I want always done in this function.
+load_finalData <- function() {
+    read_csv(here("dat", "FinalData.csv"), col_types = "iciccccddddcccccc")
+}
+```
+
+Now load the data:
+```{r}
+df_orig <- load_finalData()
+```
+
+# Inspect the data
+
+I like to use the `{inspectdf}` package to look for ranges and missing values in
+a table.  It's a very nice, compact, and intuitive display.
+
+
+## Display a few lines
+
+Often nice to just look at a sample of the data
+```{r}
+df_orig %>%
+    print()
+```
+
+But there are prettier html tables too.  See the following link:
+
+https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+```{r}
+df_orig %>%
+    knitr::kable()
+```
+
+
+## Missing Data
+
+```{r fig.width=8, fig.height=3}
+inspectdf::inspect_na(df_orig, show_plot = TRUE)
+```
+
+## Categorical Data
+
+Let's see what the breakdown of the categorical data looks like.
+
+Note that in the plot, the gray boxes represent missing data.
+```{r}
+inspectdf::inspect_cat(df_orig, show_plot = TRUE)
+```
+
+
+## Numeric Data
+
+This has been a hit-or-miss chart for me, depending on how many numerical values
+I have.  I usually have to be more hands-on in making plots of a numeric type to
+highlight what I want.
+
+```{r}
+inspectdf::inspect_num(df_orig, show_plot = TRUE)
+```
