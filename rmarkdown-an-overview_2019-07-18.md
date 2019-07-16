@@ -60,6 +60,17 @@ incremental: true
 - You want to easily see processes and its results in one spot.
 
 
+
+RMarkdown: How I use this
+========================================================
+incremental: true
+
+- I make one markdown file describing each data source I use.
+- I make a markdown for a particular model I want to assess.
+- I loop over values to make a series of charts.
+- SIDE NOTE: I make functions that wrap data loading.
+
+
 Demo: What do I mean?
 ========================================================
 
@@ -87,3 +98,4 @@ Thank You
 - Github: mpettis
 - Twitter: @mtpettis
 - Email: matthew.pettis@gmail.com
+- Repo: https://github.com/mpettis/rmarkdown-an-overview_2019-07-18/
