@@ -71,6 +71,55 @@ incremental: true
 - SIDE NOTE: I make functions that wrap data loading.
 
 
+
+
+File Parts
+========================================================
+![Evolution](rmarkdown-an-overview_2019-07-18-figure/rmd-screenshot-header.JPG)
+
+***
+
+- Header
+
+
+
+File Parts
+========================================================
+![Evolution](rmarkdown-an-overview_2019-07-18-figure/rmd-screenshot-chunkOptions.JPG)
+
+***
+
+- Header
+- Chunk Options
+
+
+File Parts
+========================================================
+![Evolution](rmarkdown-an-overview_2019-07-18-figure/rmd-screenshot-code.JPG)
+
+***
+
+- Header
+- Chunk Options
+- Code
+
+
+
+File Parts
+========================================================
+![Evolution](rmarkdown-an-overview_2019-07-18-figure/rmd-screenshot-documentation.JPG)
+
+***
+
+- Header
+- Chunk Options
+- Code
+- Commentary / Markdown
+
+
+
+
+
 Demo: What do I mean?
 ========================================================
 
@@ -79,6 +128,7 @@ Three similar samples:
 - https://mpettis.github.io/rmarkdown-an-overview_2019-07-18/rmd/Inspect-DataFinal.html
 - https://mpettis.github.io/rmarkdown-an-overview_2019-07-18/rmd/Inspect-DataFinal-customWide.html
 - https://mpettis.github.io/rmarkdown-an-overview_2019-07-18/rmd/Inspect-DataFinal-kate.html
+
 
 
 
