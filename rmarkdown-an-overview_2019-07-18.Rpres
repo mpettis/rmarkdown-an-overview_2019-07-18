@@ -1,7 +1,7 @@
 RMarkdown: An Overview
 ========================================================
 author: Matthew Pettis (matthew.pettis@gmail.com)
-date: 2019-01-17
+date: 2019-01-18
 autosize: true
 
 <style>
